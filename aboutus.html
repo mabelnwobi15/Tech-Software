@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tech Software | About Us</title>
+    <!-- Google Fonts: Inter (matching index) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Tech Software</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="work.html" class="nav-link">Work</a></li>
+            <li><a href="aboutus.html" class="nav-link">About</a></li>
+            <li><a href="contactus.html" class="nav-link">Contact</a></li>
+            <li><a href="pricing.html" class="btn-nav">Get a Website</a></li>
+            <li><button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <h1>About Tech Software</h1>
+        </div>
+
+        <!-- About Cards - Simple stacked layout -->
+        <div class="about-stack">
+            <div class="card">
+                <h2>Who We Are</h2>
+                <p>Tech Software is built on purpose, creativity, and growth. Behind it is a passionate creator dedicated to learning, evolving, and building meaningful digital experiences. Every project is approached with intention — not just to create something beautiful, but something impactful.</p>
+            </div>
+            <div class="card">
+                <h2>Our Mission</h2>
+                <p>Our mission is to empower individuals and businesses by giving them a platform to showcase who they are. We create websites and digital solutions that don't just look great, but drive real results — helping brands grow, connect, and stand out.</p>
+            </div>
+            <div class="card">
+                <h2>Our Approach</h2>
+                <p>We focus on clean, modern, and strategic design. Every detail matters — from layout to user experience. Our goal is to create platforms that reflect your identity while making it easy for your audience to engage with your brand.</p>
+            </div>
+        </div>
+
+        <!-- Values -->
+        <div class="values">
+            <h3>Our Core Values</h3>
+            <div class="tags">
+                <span class="tag">Client First</span>
+                <span class="tag">Innovation</span>
+                <span class="tag">Quality</span>
+                <span class="tag">Growth</span>
+                <span class="tag">Integrity</span>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h3>Ready to work together?</h3>
+            <p>Let's create something amazing that reflects who you are.</p>
+            <button id="consultBtn" class="btn">Let's talk →</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Tech Software</h4>
+            <p>Code that converts, design that inspires.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li>Custom Software Development</li>
+                <li>Mobile App Development</li>
+                <li>Web Development</li>
+                <li>Cloud Solutions</li>
+                <li>IT Consulting</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> solutionsfirstsoftware@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> (415) 867-5309</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, SF</p>
+        </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Tech Software. All rights reserved.</span>
+        <span>Privacy Policy</span>
+        <span>Terms of Service</span>
+        <span>Cookie Policy</span>
+    </div>
+</footer>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #FFFFFF;
+        color: #111111;
+        line-height: 1.4;
+        scroll-behavior: smooth;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* DARK MODE - Light Turquoise/Cyan text matching index */
+    body.dark-mode {
+        background: #0A1525;
+        color: #B2F0F0;
+    }
+
+    body.dark-mode .navbar {
+        background: rgba(10, 21, 37, 0.96);
+        border-bottom-color: #1A3A50;
+    }
+    body.dark-mode .logo {
+        background: linear-gradient(135deg, #7DD3E8, #4FD1C5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    body.dark-mode .nav-link {
+        color: #B2F0F0;
+    }
+    body.dark-mode .nav-link:hover {
+        color: #7DD3E8;
+    }
+    body.dark-mode .btn-nav {
+        background: #1A3A50;
+        color: #B2F0F0;
+    }
+    body.dark-mode .btn-nav:hover {
+        background: #2A5A7A;
+    }
+    body.dark-mode .theme-toggle {
+        background: #1A3A50;
+        color: #B2F0F0;
+    }
+    body.dark-mode .hero h1 {
+        background: linear-gradient(135deg, #7DD3E8, #4FD1C5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    body.dark-mode .card {
+        background: #1A2A40;
+        border-color: #2A4A6A;
+    }
+    body.dark-mode .card h2 {
+        color: #7DD3E8;
+    }
+    body.dark-mode .card p {
+        color: #B2F0F0;
+    }
+    body.dark-mode .values h3 {
+        color: #7DD3E8;
+    }
+    body.dark-mode .tag {
+        background: rgba(79, 209, 197, 0.1);
+        border-color: rgba(79, 209, 197, 0.3);
+        color: #B2F0F0;
+    }
+    body.dark-mode .tag:hover {
+        background: rgba(79, 209, 197, 0.2);
+    }
+    body.dark-mode .cta {
+        background: #1A2A40;
+        border-color: #2A4A6A;
+    }
+    body.dark-mode .cta h3 {
+        color: #B2F0F0;
+    }
+    body.dark-mode .cta p {
+        color: #B2F0F0;
+    }
+    body.dark-mode .btn {
+        background: #1A6BA0;
+        color: white;
+    }
+    body.dark-mode .btn:hover {
+        background: #2A8AC0;
+    }
+    body.dark-mode footer {
+        background: #0A1525;
+        border-top-color: #1A3A50;
+    }
+    body.dark-mode .footer-col h4 {
+        color: #7DD3E8;
+    }
+    body.dark-mode .footer-col li, body.dark-mode .footer-col p {
+        color: #B2F0F0;
+    }
+    body.dark-mode .footer-col a {
+        color: #B2F0F0;
+    }
+    body.dark-mode .footer-col a:hover {
+        color: #4FD1C5;
+    }
+    body.dark-mode .footer-bottom {
+        color: #B2F0F0;
+    }
+    body.dark-mode hr {
+        background: #2A4A6A;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #EAEAEF;
+        padding: 0.75rem 0;
+        transition: background 0.25s ease;
+    }
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .logo {
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        background: linear-gradient(135deg, #0A2540, #1A6BA0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .nav-link {
+        text-decoration: none;
+        font-weight: 500;
+        color: #2C3E50;
+        transition: 0.2s;
+        font-size: 0.95rem;
+    }
+    .nav-link:hover { color: #1A6BA0; }
+    .btn-nav {
+        background: #0A2540;
+        padding: 0.5rem 1.3rem;
+        border-radius: 200px;
+        font-weight: 600;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 0.85rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .btn-nav:hover {
+        transform: translateY(-2px);
+        background: #1A6BA0;
+    }
+    .theme-toggle {
+        background: #E8F0FE;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        color: #0A2540;
+    }
+    .theme-toggle:hover {
+        background: #D0E4F7;
+    }
+
+    /* Hero */
+    .hero {
+        text-align: center;
+        margin: 2rem 0 2rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #0A2540, #1A6BA0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 0.5rem;
+    }
+
+    /* About Cards */
+    .about-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    .card {
+        background: #FFFFFF;
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 1px solid #D0E4F7;
+        transition: all 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-3px);
+        border-color: #1A6BA0;
+        box-shadow: 0 12px 24px -12px rgba(26, 107, 160, 0.15);
+    }
+    .card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #0A2540;
+    }
+    .card p {
+        color: #5E6B7C;
+        line-height: 1.6;
+    }
+
+    /* Values */
+    .values {
+        margin: 2rem 0 2rem;
+        text-align: center;
+    }
+    .values h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #0A2540;
+    }
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    .tag {
+        background: #E8F0FE;
+        border: 1px solid #D0E4F7;
+        padding: 0.5rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: 0.2s;
+        color: #0A2540;
+    }
+    .tag:hover {
+        background: #D0E4F7;
+        transform: translateY(-2px);
+    }
+
+    /* CTA */
+    .cta {
+        text-align: center;
+        background: #F7FAFC;
+        border-radius: 24px;
+        padding: 2rem;
+        margin-top: 2rem;
+        border: 1px solid #D0E4F7;
+    }
+    .cta h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #0A2540;
+    }
+    .cta p {
+        margin-bottom: 1rem;
+        color: #5E6B7C;
+    }
+    .btn {
+        background: #1A6BA0;
+        border: none;
+        padding: 0.7rem 1.8rem;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        color: white;
+        transition: all 0.2s;
+    }
+    .btn:hover {
+        transform: translateY(-2px);
+        background: #2580B0;
+        box-shadow: 0 4px 12px rgba(26, 107, 160, 0.3);
+    }
+
+    /* FOOTER */
+    footer {
+        background: #F5F9FF;
+        border-top: 1px solid #D0E4F7;
+        padding: 3rem 2rem 2rem;
+        margin-top: 4rem;
+    }
+    .footer-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+    .footer-col h4 {
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: #0A2540;
+    }
+    .footer-col ul {
+        list-style: none;
+    }
+    .footer-col li, .footer-col p {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        color: #5C6B7A;
+    }
+    .footer-col a {
+        text-decoration: none;
+        color: #5C6B7A;
+        transition: 0.2s;
+    }
+    .footer-col a:hover {
+        color: #1A6BA0;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        font-size: 0.75rem;
+        color: #7A8B9C;
+        display: flex;
+        justify-content: center;
+        gap: 1.8rem;
+        flex-wrap: wrap;
+    }
+    hr {
+        margin: 1.5rem auto;
+        max-width: 1200px;
+        border: 0;
+        height: 1px;
+        background: #D0E4F7;
+    }
+
+    @media (max-width: 768px) {
+        .container { padding: 0 20px; }
+        .nav-container { flex-direction: column; align-items: stretch; text-align: center; }
+        .nav-links { justify-content: center; }
+        .hero h1 { font-size: 1.8rem; }
+    }
+</style>
+
+<script>
+    (function() {
+        // Dark Mode Toggle - matching index behavior
+        const toggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.remove('dark-mode');
+                toggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('techTheme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                toggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('techTheme', 'dark');
+            }
+        }
+        
+        const savedTheme = localStorage.getItem('techTheme');
+        if (savedTheme === 'dark') {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+        
+        toggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+
+        // Button Interactions
+        document.getElementById('consultBtn')?.addEventListener('click', () => {
+            window.location.href = "contactus.html";
+        });
+    })();
+</script>
+</body>
+</html>
