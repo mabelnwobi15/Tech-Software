@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Tech Software | Our Work - Portfolio Showcase</title>
-    <!-- Google Fonts: Inter (matching index) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <title>Tech Software | Our Work – Portfolio Showcase</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    
+
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo">Tech Software</div>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="services.html" class="nav-link">Services</a></li>
             <li><a href="work.html" class="nav-link">Work</a></li>
@@ -24,6 +32,7 @@
             <li><button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button></li>
         </ul>
     </div>
+    <div id="menuOverlay" class="menu-overlay"></div>
 </nav>
 
 <main>
@@ -31,7 +40,7 @@
         <!-- Hero -->
         <div class="hero">
             <h1>Our Work</h1>
-            <p>We take pride in delivering digital solutions that make a real difference. Here are some of our favorite projects.</p>
+            <p>We take pride in delivering digital solutions that make a real difference. Here are some of our favorite projects, from web apps to cloud transformations.</p>
         </div>
 
         <!-- Filter Buttons -->
@@ -47,7 +56,7 @@
         <div class="projects-grid" id="projectsGrid">
             <!-- Project 1 - Web Development -->
             <div class="project-card" data-category="web">
-                <img src="https://placehold.co/600x400/1a4a6a/64ffda?text=SaaS+Platform" alt="Modern SaaS Platform" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #0F2C4F, #1A5F7A); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🚀 SaaS Analytics</div>
                 <div class="project-content">
                     <span class="tag">Client Project</span>
                     <h3>Modern SaaS Platform</h3>
@@ -59,11 +68,11 @@
 
             <!-- Project 2 - Mobile App -->
             <div class="project-card" data-category="mobile">
-                <img src="https://placehold.co/600x400/2a5a7a/64ffda?text=Fitness+App" alt="Fitness Tracker App" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #1A4A6A, #2E7D9E); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🏋️ Fitness Tracker</div>
                 <div class="project-content">
                     <span class="tag">Client Project</span>
                     <h3>Fitness Tracker</h3>
-                    <p class="project-description">Cross-platform mobile app for tracking workouts, nutrition, and progress. Features real-time syncing and personalized coaching.</p>
+                    <p class="project-description">Cross-platform mobile app for tracking workouts, nutrition, and progress. Features real-time syncing, personalized coaching, and social challenges.</p>
                     <div class="project-category">Mobile Development | React Native</div>
                     <a href="#" class="demo-btn">View Live Demo →</a>
                 </div>
@@ -71,11 +80,11 @@
 
             <!-- Project 3 - Web Development (E-commerce) -->
             <div class="project-card" data-category="web">
-                <img src="https://placehold.co/600x400/3a6a8a/64ffda?text=E-commerce+Store" alt="E-commerce Store" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #0D3B4F, #1F8A9E); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🛍️ Luxury Store</div>
                 <div class="project-content">
                     <span class="tag">Client Project</span>
                     <h3>Luxury E‑commerce Store</h3>
-                    <p class="project-description">High-performance online store with custom checkout flow, inventory management, and seamless payment gateway integration.</p>
+                    <p class="project-description">High-performance online store with custom checkout flow, inventory management, and seamless payment gateway integration for a premium brand.</p>
                     <div class="project-category">Web Development | Shopify + Custom</div>
                     <a href="#" class="demo-btn">View Live Demo →</a>
                 </div>
@@ -83,11 +92,11 @@
 
             <!-- Project 4 - Cloud Solutions -->
             <div class="project-card" data-category="cloud">
-                <img src="https://placehold.co/600x400/2a6a8a/64ffda?text=Cloud+Migration" alt="Cloud Migration Project" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #1A5A7A, #2A8AAA); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">☁️ Cloud Migration</div>
                 <div class="project-content">
                     <span class="tag">Client Project</span>
                     <h3>Enterprise Cloud Migration</h3>
-                    <p class="project-description">Migrated legacy on-premise infrastructure to AWS, reducing costs by 40% and improving scalability for a logistics company.</p>
+                    <p class="project-description">Migrated legacy on-premise infrastructure to AWS, reducing costs by 40% and improving scalability for a logistics company with 24/7 operations.</p>
                     <div class="project-category">Cloud Solutions | AWS + DevOps</div>
                     <a href="#" class="demo-btn">View Case Study →</a>
                 </div>
@@ -95,23 +104,23 @@
 
             <!-- Project 5 - Consulting -->
             <div class="project-card" data-category="consulting">
-                <img src="https://placehold.co/600x400/1a5a7a/64ffda?text=Digital+Transformation" alt="Digital Transformation" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #0E4A6A, #2A7FA0); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📊 Digital Strategy</div>
                 <div class="project-content">
                     <span class="tag">Consulting Project</span>
                     <h3>FinTech Digital Transformation</h3>
-                    <p class="project-description">Provided strategic IT roadmap and tech stack modernization for a financial services startup, resulting in 3x faster deployment cycles.</p>
+                    <p class="project-description">Provided strategic IT roadmap and tech stack modernization for a financial services startup, resulting in 3x faster deployment cycles and improved security.</p>
                     <div class="project-category">IT Consulting | Strategy + Implementation</div>
                     <a href="#" class="demo-btn">View Case Study →</a>
                 </div>
             </div>
 
-            <!-- Project 6 - Mobile App (Concept) -->
+            <!-- Project 6 - Mobile App -->
             <div class="project-card" data-category="mobile">
-                <img src="https://placehold.co/600x400/3a8aaa/64ffda?text=Meditation+App" alt="Meditation App Concept" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #2A5A7A, #3A9ABA); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🧘 Mindful Moments</div>
                 <div class="project-content">
                     <span class="tag">Concept Project</span>
                     <h3>Mindful Moments</h3>
-                    <p class="project-description">A beautifully designed meditation and mindfulness app with guided sessions, ambient sounds, and progress tracking.</p>
+                    <p class="project-description">A beautifully designed meditation and mindfulness app with guided sessions, ambient sounds, progress tracking, and personalized recommendations.</p>
                     <div class="project-category">Mobile Development | Flutter + Firebase</div>
                     <a href="#" class="demo-btn">View Live Demo →</a>
                 </div>
@@ -119,11 +128,11 @@
 
             <!-- Project 7 - Web Development -->
             <div class="project-card" data-category="web">
-                <img src="https://placehold.co/600x400/2a4a6a/64ffda?text=Creative+Portfolio" alt="Creative Portfolio" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #0F3A5A, #2580A8); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎨 Creative Agency</div>
                 <div class="project-content">
                     <span class="tag">Client Project</span>
                     <h3>Creative Agency Portfolio</h3>
-                    <p class="project-description">Custom portfolio website for a design agency featuring smooth animations, case study showcases, and integrated contact forms.</p>
+                    <p class="project-description">Custom portfolio website for a design agency featuring smooth animations, case study showcases, integrated contact forms, and SEO optimization.</p>
                     <div class="project-category">Web Development | Next.js + GSAP</div>
                     <a href="#" class="demo-btn">View Live Demo →</a>
                 </div>
@@ -131,11 +140,11 @@
 
             <!-- Project 8 - Cloud/DevOps -->
             <div class="project-card" data-category="cloud">
-                <img src="https://placehold.co/600x400/1a7a9a/64ffda?text=CI%2FCD+Pipeline" alt="CI/CD Automation" class="project-image">
+                <div class="project-image" style="background: linear-gradient(135deg, #1A6A8A, #2A9ACA); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚙️ CI/CD Pipeline</div>
                 <div class="project-content">
                     <span class="tag">Client Project</span>
                     <h3>Automated CI/CD Pipeline</h3>
-                    <p class="project-description">Implemented end-to-end CI/CD pipeline using GitHub Actions and Docker, reducing deployment time from hours to minutes.</p>
+                    <p class="project-description">Implemented end-to-end CI/CD pipeline using GitHub Actions, Docker, and Kubernetes, reducing deployment time from hours to minutes with zero downtime.</p>
                     <div class="project-category">Cloud Solutions | DevOps + Automation</div>
                     <a href="#" class="demo-btn">View Case Study →</a>
                 </div>
@@ -156,7 +165,7 @@
         <div class="footer-col">
             <h4>Tech Software</h4>
             <p>Code that converts, design that inspires.</p>
-          
+            <p>Innovative solutions for modern business.</p>
         </div>
         <div class="footer-col">
             <h4>Quick Links</h4>
@@ -181,7 +190,7 @@
         <div class="footer-col">
             <h4>Contact</h4>
             <p><i class="fas fa-envelope"></i> solutionsfirstsoftware@gmail.com</p>
-            <p><i class="fas fa-phone-alt"></i> +27 505 4974</p>
+            <p><i class="fas fa-phone-alt"></i> +27 82 505 4974</p>
             <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
         </div>
     </div>
@@ -194,501 +203,76 @@
     </div>
 </footer>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
 
-    body {
-        font-family: 'Inter', sans-serif;
-        background: #FFFFFF;
-        color: #111111;
-        line-height: 1.4;
-        scroll-behavior: smooth;
-        transition: background-color 0.25s ease, color 0.25s ease;
-    }
-
-    /* DARK MODE - Light Turquoise/Cyan text matching index */
-    body.dark-mode {
-        background: #0A1525;
-        color: #B2F0F0;
-    }
-
-    body.dark-mode .navbar {
-        background: rgba(10, 21, 37, 0.96);
-        border-bottom-color: #1A3A50;
-    }
-    body.dark-mode .logo {
-        background: linear-gradient(135deg, #7DD3E8, #4FD1C5);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-    body.dark-mode .nav-link {
-        color: #B2F0F0;
-    }
-    body.dark-mode .nav-link:hover {
-        color: #7DD3E8;
-    }
-    body.dark-mode .btn-nav {
-        background: #1A3A50;
-        color: #B2F0F0;
-    }
-    body.dark-mode .btn-nav:hover {
-        background: #2A5A7A;
-    }
-    body.dark-mode .theme-toggle {
-        background: #1A3A50;
-        color: #B2F0F0;
-    }
-    body.dark-mode .hero h1 {
-        background: linear-gradient(135deg, #7DD3E8, #4FD1C5);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-    body.dark-mode .hero p {
-        color: #B2F0F0;
-    }
-    body.dark-mode .filter-btn {
-        background: #1A3A50;
-        border-color: #2A5A7A;
-        color: #B2F0F0;
-    }
-    body.dark-mode .filter-btn.active {
-        background: #4FD1C5;
-        color: #0A1525;
-    }
-    body.dark-mode .project-card {
-        background: #1A2A40;
-        border-color: #2A4A6A;
-    }
-    body.dark-mode .tag {
-        background: rgba(79, 209, 197, 0.15);
-        color: #4FD1C5;
-    }
-    body.dark-mode .project-card h3 {
-        color: #B2F0F0;
-    }
-    body.dark-mode .project-description {
-        color: #B2F0F0;
-    }
-    body.dark-mode .project-category {
-        color: #4FD1C5;
-    }
-    body.dark-mode .demo-btn {
-        background: #1A6BA0;
-        color: white;
-    }
-    body.dark-mode .demo-btn:hover {
-        background: #2A8AC0;
-    }
-    body.dark-mode .cta-section {
-        background: #1A2A40;
-        border-color: #2A4A6A;
-    }
-    body.dark-mode .cta-section h3 {
-        color: #B2F0F0;
-    }
-    body.dark-mode .cta-section p {
-        color: #B2F0F0;
-    }
-    body.dark-mode .btn-primary {
-        background: #1A6BA0;
-        color: white;
-    }
-    body.dark-mode .btn-primary:hover {
-        background: #2A8AC0;
-    }
-    body.dark-mode footer {
-        background: #0A1525;
-        border-top-color: #1A3A50;
-    }
-    body.dark-mode .footer-col h4 {
-        color: #7DD3E8;
-    }
-    body.dark-mode .footer-col li, body.dark-mode .footer-col p {
-        color: #B2F0F0;
-    }
-    body.dark-mode .footer-col a {
-        color: #B2F0F0;
-    }
-    body.dark-mode .footer-col a:hover {
-        color: #4FD1C5;
-    }
-    body.dark-mode .footer-bottom {
-        color: #B2F0F0;
-    }
-    body.dark-mode hr {
-        background: #2A4A6A;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 32px;
-    }
-
-    /* NAVBAR */
-    .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid #EAEAEF;
-        padding: 0.75rem 0;
-        transition: background 0.25s ease;
-    }
-    .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 32px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    .logo {
-        font-size: 1.55rem;
-        font-weight: 700;
-        letter-spacing: -0.3px;
-        background: linear-gradient(135deg, #0A2540, #1A6BA0);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .nav-link {
-        text-decoration: none;
-        font-weight: 500;
-        color: #2C3E50;
-        transition: 0.2s;
-        font-size: 0.95rem;
-    }
-    .nav-link:hover { color: #1A6BA0; }
-    .btn-nav {
-        background: #0A2540;
-        padding: 0.5rem 1.3rem;
-        border-radius: 200px;
-        font-weight: 600;
-        border: none;
-        color: white;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 0.85rem;
-        text-decoration: none;
-        display: inline-block;
-    }
-    .btn-nav:hover {
-        transform: translateY(-2px);
-        background: #1A6BA0;
-    }
-    .theme-toggle {
-        background: #E8F0FE;
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-        border-radius: 50%;
-        width: 38px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s;
-        color: #0A2540;
-    }
-    .theme-toggle:hover {
-        background: #D0E4F7;
-    }
-
-    /* Hero */
-    .hero {
-        text-align: center;
-        margin: 2rem 0 2rem;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #0A2540, #1A6BA0);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin-bottom: 0.5rem;
-    }
-    .hero p {
-        font-size: 1rem;
-        color: #5E6B7C;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    /* Filter Buttons */
-    .filter-section {
-        display: flex;
-        justify-content: center;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        margin: 2rem 0 2rem;
-    }
-    .filter-btn {
-        background: #E8F0FE;
-        border: 1px solid #D0E4F7;
-        padding: 0.5rem 1.2rem;
-        border-radius: 40px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s;
-        color: #0A2540;
-        font-size: 0.85rem;
-    }
-    .filter-btn.active {
-        background: #1A6BA0;
-        color: white;
-        border-color: #1A6BA0;
-    }
-    .filter-btn:hover {
-        transform: translateY(-2px);
-        background: #1A6BA0;
-        color: white;
-    }
-
-    /* Projects Grid */
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 1.8rem;
-        margin: 2rem 0;
-    }
-    .project-card {
-        background: #FFFFFF;
-        border-radius: 24px;
-        overflow: hidden;
-        border: 1px solid #D0E4F7;
-        transition: all 0.3s ease;
-        opacity: 0;
-        transform: translateY(30px);
-        display: flex;
-        flex-direction: column;
-    }
-    .project-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .project-card:hover {
-        transform: translateY(-6px);
-        border-color: #1A6BA0;
-        box-shadow: 0 20px 30px -12px rgba(26, 107, 160, 0.15);
-    }
-    .project-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-    .project-card:hover .project-image {
-        transform: scale(1.02);
-    }
-    .project-content {
-        padding: 1.5rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .tag {
-        display: inline-block;
-        background: #E8F0FE;
-        color: #1A6BA0;
-        font-size: 0.65rem;
-        font-weight: 600;
-        padding: 0.25rem 0.8rem;
-        border-radius: 30px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 0.8rem;
-        width: fit-content;
-    }
-    .project-card h3 {
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: #0A2540;
-    }
-    .project-description {
-        font-size: 0.85rem;
-        color: #5E6B7C;
-        margin-bottom: 1rem;
-        line-height: 1.5;
-        flex: 1;
-    }
-    .project-category {
-        font-size: 0.7rem;
-        color: #1A6BA0;
-        margin-bottom: 1rem;
-        font-weight: 500;
-    }
-    .demo-btn {
-        background: #1A6BA0;
-        border: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 40px;
-        font-weight: 600;
-        font-size: 0.8rem;
-        cursor: pointer;
-        color: white;
-        transition: all 0.2s;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        width: fit-content;
-        text-decoration: none;
-    }
-    .demo-btn:hover {
-        transform: translateY(-2px);
-        background: #2580B0;
-        box-shadow: 0 4px 12px rgba(26, 107, 160, 0.3);
-    }
-
-    /* CTA Section */
-    .cta-section {
-        text-align: center;
-        background: #F7FAFC;
-        border-radius: 28px;
-        padding: 2rem;
-        margin-top: 2rem;
-        border: 1px solid #D0E4F7;
-    }
-    .cta-section h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        color: #0A2540;
-    }
-    .cta-section p {
-        margin-bottom: 1rem;
-        color: #5E6B7C;
-    }
-    .btn-primary {
-        background: #1A6BA0;
-        border: none;
-        padding: 0.7rem 1.8rem;
-        border-radius: 40px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        cursor: pointer;
-        color: white;
-        transition: all 0.2s;
-    }
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        background: #2580B0;
-        box-shadow: 0 4px 12px rgba(26, 107, 160, 0.3);
-    }
-
-    /* FOOTER */
-    footer {
-        background: #F5F9FF;
-        border-top: 1px solid #D0E4F7;
-        padding: 3rem 2rem 2rem;
-        margin-top: 4rem;
-    }
-    .footer-grid {
-        max-width: 1200px;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-    }
-    .footer-col h4 {
-        margin-bottom: 1rem;
-        font-weight: 600;
-        color: #0A2540;
-    }
-    .footer-col ul {
-        list-style: none;
-    }
-    .footer-col li, .footer-col p {
-        margin-bottom: 0.5rem;
-        font-size: 0.85rem;
-        color: #5C6B7A;
-    }
-    .footer-col a {
-        text-decoration: none;
-        color: #5C6B7A;
-        transition: 0.2s;
-    }
-    .footer-col a:hover {
-        color: #1A6BA0;
-    }
-    .footer-bottom {
-        text-align: center;
-        padding-top: 2rem;
-        font-size: 0.75rem;
-        color: #7A8B9C;
-        display: flex;
-        justify-content: center;
-        gap: 1.8rem;
-        flex-wrap: wrap;
-    }
-    hr {
-        margin: 1.5rem auto;
-        max-width: 1200px;
-        border: 0;
-        height: 1px;
-        background: #D0E4F7;
-    }
-
-    @media (max-width: 768px) {
-        .container { padding: 0 20px; }
-        .nav-container { flex-direction: column; align-items: stretch; text-align: center; }
-        .nav-links { justify-content: center; }
-        .hero h1 { font-size: 1.8rem; }
-        .projects-grid { grid-template-columns: 1fr; }
-    }
-</style>
-
+/*Left the javascript below as as a backup in case of any issues with the external script file. It is also included in the external script.js file for better organization */
 <script>
     (function() {
-        // Dark Mode Toggle
-        const toggle = document.getElementById('darkModeToggle');
+        // ========== HAMBURGER MENU ==========
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        const overlay = document.getElementById('menuOverlay');
+        
+        function closeMenu() {
+            if (navLinks) navLinks.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+        
+        function openMenu() {
+            if (navLinks) navLinks.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.body.classList.add('menu-open');
+            if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-times"></i>';
+        }
+        
+        function toggleMenu() {
+            if (navLinks && navLinks.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+        
+        if (hamburgerBtn) {
+            hamburgerBtn.addEventListener('click', toggleMenu);
+        }
+        if (overlay) {
+            overlay.addEventListener('click', closeMenu);
+        }
+        const allNavItems = document.querySelectorAll('.nav-link, .btn-nav');
+        allNavItems.forEach(link => {
+            link.addEventListener('click', () => { closeMenu(); });
+        });
+
+        // ========== DARK MODE ==========
+        const toggleDark = document.getElementById('darkModeToggle');
         const body = document.body;
         
         function setTheme(theme) {
             if (theme === 'light') {
                 body.classList.remove('dark-mode');
-                toggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('techTheme', 'light');
+                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('techThemeWork', 'light');
             } else {
                 body.classList.add('dark-mode');
-                toggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('techTheme', 'dark');
+                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('techThemeWork', 'dark');
             }
         }
         
-        const savedTheme = localStorage.getItem('techTheme');
-        if (savedTheme === 'dark') {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
+        const savedTheme = localStorage.getItem('techThemeWork');
+        if (savedTheme === 'dark') setTheme('dark');
+        else setTheme('light');
         
-        toggle.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-                setTheme('light');
-            } else {
-                setTheme('dark');
-            }
-        });
+        if (toggleDark) {
+            toggleDark.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) setTheme('light');
+                else setTheme('dark');
+            });
+        }
 
-        // Intersection Observer for fade-in animations
+        // ========== INTERSECTION OBSERVER (fade-in) ==========
         const projectCards = document.querySelectorAll('.project-card');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -698,10 +282,9 @@
                 }
             });
         }, { threshold: 0.1 });
-        
         projectCards.forEach(card => observer.observe(card));
 
-        // Filter functionality
+        // ========== FILTER FUNCTIONALITY ==========
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projects = document.querySelectorAll('.project-card');
         
@@ -709,7 +292,6 @@
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
                 const filterValue = btn.getAttribute('data-filter');
                 
                 projects.forEach(project => {
@@ -724,20 +306,23 @@
             });
         });
 
-        // Demo buttons
+        // ========== DEMO BUTTONS ==========
         const demoBtns = document.querySelectorAll('.demo-btn');
         demoBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const projectName = btn.closest('.project-card')?.querySelector('h3')?.textContent || 'Project';
-                alert(`✨ Opening live demo: ${projectName}\n\n(This would open the actual live website in a new tab.)`);
+                alert(`✨ Opening live demo: ${projectName}\n\n(This would open the actual live website or case study in a new tab.)`);
             });
         });
 
-        // Button Interactions
-        document.getElementById('consultBtn')?.addEventListener('click', () => {
-            window.location.href = "contactus.html";
-        });
+        // ========== CONSULTATION BUTTON ==========
+        const consultBtn = document.getElementById('consultBtn');
+        if (consultBtn) {
+            consultBtn.addEventListener('click', () => {
+                window.location.href = "contactus.html";
+            });
+        }
     })();
 </script>
 </body>
