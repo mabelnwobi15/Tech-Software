@@ -44,7 +44,7 @@
                 <div class="laptop-frame">
                     <div class="laptop-screen">
                         <div class="media-container">
-                            <img src="images/zarla-blank-website-template-2-2293x1379-20250609.jpg" alt="Website Preview">
+                            <img src="https://placehold.co/800x450/2563eb/white?text=Tech+Software+Preview" alt="Website Preview">
                         </div>
                     </div>
                     <div class="keyboard-base"></div>
@@ -65,9 +65,36 @@
         <div class="section-header"><h2>Our Work</h2></div>
         <p class="section-subhead">Explore our recent projects and see how we've helped businesses succeed online.</p>
         <div class="work-grid">
-            <div class="work-item"><div class="client-badge-right">Client</div><div class="work-img"><div class="concept-icon"><i class="fas fa-cloud-upload-alt"></i></div></div><div class="work-info"><span class="work-category">Web Design / SaaS</span><h4>Modern SaaS Platform</h4><p class="work-description">Fully responsive dashboard & high-performance cloud infrastructure.</p><a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a></div></div>
-            <div class="work-item"><div class="client-badge-right">Concept</div><div class="work-img"><div class="concept-icon"><i class="fas fa-shopping-cart"></i></div></div><div class="work-info"><span class="work-category">Full Stack / E‑commerce</span><h4>E-Commerce Store</h4><p class="work-description">Scalable online store with cart, payments, and inventory management.</p><a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a></div></div>
-            <div class="work-item"><div class="client-badge-right">Client</div><div class="work-img"><div class="concept-icon"><i class="fas fa-star-of-life"></i></div></div><div class="work-info"><span class="work-category">UI/UX Design / Branding</span><h4>Creative Portfolio</h4><p class="work-description">Immersive digital portfolio for artists & designers with smooth animations.</p><a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="work-item">
+                <div class="client-badge-right">Client</div>
+                <div class="work-img"><div class="concept-icon"><i class="fas fa-cloud-upload-alt"></i></div></div>
+                <div class="work-info">
+                    <span class="work-category">Web Design / SaaS</span>
+                    <h4>Modern SaaS Platform</h4>
+                    <p class="work-description">Fully responsive dashboard & high-performance cloud infrastructure.</p>
+                    <a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="client-badge-right">Concept</div>
+                <div class="work-img"><div class="concept-icon"><i class="fas fa-shopping-cart"></i></div></div>
+                <div class="work-info">
+                    <span class="work-category">Full Stack / E‑commerce</span>
+                    <h4>E-Commerce Store</h4>
+                    <p class="work-description">Scalable online store with cart, payments, and inventory management.</p>
+                    <a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="client-badge-right">Client</div>
+                <div class="work-img"><div class="concept-icon"><i class="fas fa-star-of-life"></i></div></div>
+                <div class="work-info">
+                    <span class="work-category">UI/UX Design / Branding</span>
+                    <h4>Creative Portfolio</h4>
+                    <p class="work-description">Immersive digital portfolio for artists & designers with smooth animations.</p>
+                    <a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
 
         <!-- Ready-Made Templates -->
@@ -591,6 +618,8 @@
             border: 1px solid #E2E8F0;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         .work-item:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
         .work-img {
@@ -620,26 +649,45 @@
             text-transform: uppercase;
             z-index: 2;
         }
-        .work-info { padding: 1.5rem; }
+        .work-info { 
+            padding: 1.5rem; 
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
         .work-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #2563eb; font-weight: 700; margin-bottom: 0.5rem; display: inline-block; }
         .work-info h4 { font-size: 1.35rem; font-weight: 700; margin: 0.25rem 0 0.5rem; color: #0F172A; }
         .work-description { font-size: 0.85rem; color: #475569; margin-bottom: 1.2rem; line-height: 1.4; }
+        
+        /* VIEW PROJECT BUTTONS - FULL WIDTH TO FIT CONTAINER */
         .view-project-link {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.6rem;
             background: #2563eb;
             color: white;
             font-weight: 600;
             font-size: 0.9rem;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1rem;
             text-decoration: none;
             transition: all 0.25s ease;
+            width: 100%;
+            text-align: center;
             border-radius: 40px;
             cursor: pointer;
+            border: none;
+            margin-top: auto;
         }
         .view-project-link:hover {
             background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+        }
+        .view-project-link i {
+            transition: transform 0.2s;
+        }
+        .view-project-link:hover i {
             transform: translateX(5px);
         }
 
@@ -656,6 +704,8 @@
             border: 1px solid #D0E4F7;
             transition: 0.3s;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .template-card:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
         .template-top {
@@ -668,7 +718,7 @@
         .gradient-purple { background: linear-gradient(135deg, #9333ea, #ec4899); }
         .gradient-orange { background: linear-gradient(135deg, #f97316, #ef4444); }
         .template-top i { font-size: 2.5rem; color: white; }
-        .template-body { padding: 1.5rem; }
+        .template-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
         .template-body h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
         .template-body p { font-size: 0.85rem; color: #5E6B7C; margin-bottom: 1rem; }
         .template-features {
@@ -702,6 +752,7 @@
             cursor: pointer;
             transition: 0.2s;
             border-radius: 40px;
+            margin-top: auto;
         }
         .btn-template:hover { background: #1d4ed8; transform: translateY(-2px); }
 
