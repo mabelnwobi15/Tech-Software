@@ -14,9 +14,7 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="logo">Tech Software</div>
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="services.html" class="nav-link">Services</a></li>
@@ -24,7 +22,7 @@
             <li><a href="aboutus.html" class="nav-link">About</a></li>
             <li><a href="contactus.html" class="nav-link">Contact</a></li>
             <li><a href="pricing.html" class="btn-nav">Get a Website</a></li>
-            <li><button class="theme-toggle" id="darkModeToggle" aria-label="Dark mode"><i class="fas fa-moon"></i></button></li>
+            <li><button class="theme-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button></li>
         </ul>
     </div>
     <div id="menuOverlay" class="menu-overlay"></div>
@@ -32,9 +30,10 @@
 
 <main>
     <div class="container">
+        <!-- Hero Section -->
         <div class="hero">
             <div class="hero-content">
-                <h1>We build websites that turn visitors into clients</h1>
+                <h1>We build websites that <span class="highlight">turn visitors into clients</span></h1>
                 <p>Professional, conversion-optimized websites for individuals and businesses. We blend stunning design with strategic functionality to help you grow online.</p>
                 <div class="hero-buttons">
                     <a href="work.html" class="btn-primary">View Our Work <i class="fas fa-arrow-right"></i></a>
@@ -44,11 +43,8 @@
             <div class="laptop-mockup">
                 <div class="laptop-frame">
                     <div class="laptop-screen">
-                        <div class="website-preview">
-                            <div class="preview-circle"></div>
-                            <div class="preview-bar"></div>
-                            <div class="preview-lines"></div>
-                            <div class="preview-lines" style="width: 50%;"></div>
+                        <div class="media-container">
+                            <img src="images/zarla-blank-website-template-2-2293x1379-20250609.jpg" alt="Website Preview">
                         </div>
                     </div>
                     <div class="keyboard-base"></div>
@@ -56,67 +52,102 @@
             </div>
         </div>
 
+        <!-- Features -->
         <div class="section-header"><h2>Building Digital Experiences That Matter</h2></div>
-        <p class="section-subhead">We're a team of designers and developers passionate about creating websites that don't just look good but deliver results. Every project is built with your success in mind.</p>
+        <p class="section-subhead">We're a team of designers and developers passionate about creating websites that don't just look good but deliver results.</p>
         <div class="three-col-grid">
             <div class="feature-card"><i class="fas fa-laptop-code feature-icon"></i><h3>Design</h3><p>Beautiful, modern interfaces that capture attention and communicate your brand effectively.</p></div>
             <div class="feature-card"><i class="fas fa-bullseye feature-icon"></i><h3>Strategy</h3><p>Data-driven approach to create websites that achieve your business goals and KPIs.</p></div>
             <div class="feature-card"><i class="fas fa-rocket feature-icon"></i><h3>Growth</h3><p>Conversion-optimized experiences that turn visitors into customers and drive revenue.</p></div>
-
         </div>
 
+        <!-- Our Work -->
         <div class="section-header"><h2>Our Work</h2></div>
         <p class="section-subhead">Explore our recent projects and see how we've helped businesses succeed online.</p>
         <div class="work-grid">
-            <div class="work-item"><div class="work-img"><span>✦</span></div><div class="work-info"><span class="work-category">Web Design</span><h4>Modern SaaS Platform</h4><a href="#" class="view-project-link">View Project → <i class="fas fa-arrow-right"></i></a></div></div>
-            <div class="work-item"><div class="work-img"><span>◆</span></div><div class="work-info"><span class="work-category">Full Stack</span><h4>E-Commerce Store</h4><a href="#" class="view-project-link">View Project → <i class="fas fa-arrow-right"></i></a></div></div>
-            <div class="work-item"><div class="work-img"><span>●</span></div><div class="work-info"><span class="work-category">UI/UX Design</span><h4>Creative Portfolio</h4><a href="#" class="view-project-link">View Project → <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="work-item"><div class="client-badge-right">Client</div><div class="work-img"><div class="concept-icon"><i class="fas fa-cloud-upload-alt"></i></div></div><div class="work-info"><span class="work-category">Web Design / SaaS</span><h4>Modern SaaS Platform</h4><p class="work-description">Fully responsive dashboard & high-performance cloud infrastructure.</p><a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="work-item"><div class="client-badge-right">Concept</div><div class="work-img"><div class="concept-icon"><i class="fas fa-shopping-cart"></i></div></div><div class="work-info"><span class="work-category">Full Stack / E‑commerce</span><h4>E-Commerce Store</h4><p class="work-description">Scalable online store with cart, payments, and inventory management.</p><a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="work-item"><div class="client-badge-right">Client</div><div class="work-img"><div class="concept-icon"><i class="fas fa-star-of-life"></i></div></div><div class="work-info"><span class="work-category">UI/UX Design / Branding</span><h4>Creative Portfolio</h4><p class="work-description">Immersive digital portfolio for artists & designers with smooth animations.</p><a href="#" class="view-project-link">View Project <i class="fas fa-arrow-right"></i></a></div></div>
         </div>
 
+        <!-- Ready-Made Templates -->
         <div class="section-header"><h2>Ready-Made Templates</h2></div>
         <p class="section-subhead">Get started quickly with our professionally designed templates. Fully customizable to match your brand.</p>
         <div class="template-grid">
-            <div class="template-card"><i class="fas fa-palette"></i><h3>Portfolio</h3><p>Showcase your work with a stunning portfolio website.</p><ul class="template-features"><li>✓ Project Gallery</li><li>✓ About Section</li><li>✓ Contact Form</li></ul><div class="template-buttons"><button class="btn-demo demo-btn">Preview Template →</button><a href="pricing.html" class="btn-pricing pricing-btn">Get a Website</a></div></div>
-            <div class="template-card"><i class="fas fa-building"></i><h3>Business</h3><p>Professional website for businesses and agencies.</p><ul class="template-features"><li>✓ Services Pages</li><li>✓ Team Section</li><li>✓ Testimonials</li></ul><div class="template-buttons"><button class="btn-demo demo-btn">Preview Template →</button><a href="pricing.html" class="btn-pricing pricing-btn">Get a Website</a></div></div>
-            <div class="template-card"><i class="fas fa-user-tie"></i><h3>Personal Brand</h3><p>Build your personal brand with a clean modern website.</p><ul class="template-features"><li>✓ Bio Section</li><li>✓ Blog Integration</li><li>✓ Social Links</li></ul><div class="template-buttons"><button class="btn-demo demo-btn">Preview Template →</button><a href="pricing.html" class="btn-pricing pricing-btn">Get a Website</a></div></div>
+            <div class="template-card"><div class="template-top gradient-blue"><i class="fas fa-briefcase"></i></div><div class="template-body"><h3>Portfolio</h3><p>Showcase your work with a stunning portfolio website.</p><ul class="template-features"><li>Project Gallery</li><li>About Section</li><li>Contact Form</li></ul><button class="btn-template preview-btn">Preview Template</button></div></div>
+            <div class="template-card"><div class="template-top gradient-purple"><i class="fas fa-building"></i></div><div class="template-body"><h3>Business</h3><p>Professional website template for businesses and agencies.</p><ul class="template-features"><li>Services Pages</li><li>Team Section</li><li>Testimonials</li></ul><button class="btn-template preview-btn">Preview Template</button></div></div>
+            <div class="template-card"><div class="template-top gradient-orange"><i class="fas fa-user"></i></div><div class="template-body"><h3>Personal Brand</h3><p>Build your personal brand with a clean, modern website.</p><ul class="template-features"><li>Bio Section</li><li>Blog Integration</li><li>Social Links</li></ul><button class="btn-template preview-btn">Preview Template</button></div></div>
         </div>
 
-        <div class="section-header"><h2>Our Services</h2></div>
-        <p class="section-subhead">From concept to launch, we offer comprehensive web design and development services.</p>
-        <div class="service-list">
-            <div class="service-card"><i class="fas fa-code"></i><h3>Website Design</h3><p>Custom website design tailored to your brand.</p><div class="service-tags"><span>Custom Design</span><span>Responsive</span></div></div>
-            <div class="service-card"><i class="fas fa-pen-ruler"></i><h3>Website Redesign</h3><p>Modernize your existing website.</p><div class="service-tags"><span>Modern UI</span><span>SEO</span></div></div>
-            <div class="service-card"><i class="fas fa-user-tie"></i><h3>Portfolio Creation</h3><p>Showcase your work professionally.</p><div class="service-tags"><span>Case Studies</span><span>Easy Updates</span></div></div>
-        </div>
-
+        <!-- CTA Section -->
         <div class="cta-section">
-            <h2>Ready to get started?</h2>
-            <p>Let's build your website · Transform your online presence</p>
-            <button id="consultBtn" class="cta-button">Book a free consultation →</button>
-            <div style="display: flex; justify-content: center; gap: 1.2rem; margin-top: 1.2rem; flex-wrap: wrap;">
-                <span>⚡ Fast Turnaround · 2-4 weeks delivery</span>
-                <span>✓ Quality Guaranteed · 100% satisfaction</span>
-                <span>🎨 Unlimited Revisions · Until you're happy</span>
+            <div class="cta-container">
+                <span class="cta-badge">✨ Ready to get started?</span>
+                <h2>Let's build your website</h2>
+                <p>Transform your online presence with a professional website that drives results. Get started today and see the difference a great website can make.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-btn-primary">Start a Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="cta-btn-outline">View Pricing</a>
+                </div>
+                <div class="cta-divider"></div>
+                <div class="cta-features">
+                    <div class="feature-item"><span>⚡</span><div><strong>Fast Turnaround</strong><br><span>2–4 weeks delivery</span></div></div>
+                    <div class="feature-item"><span>✓</span><div><strong>Quality Guaranteed</strong><br><span>100% satisfaction</span></div></div>
+                    <div class="feature-item"><span>🎨</span><div><strong>Unlimited Revisions</strong><br><span>Until you're happy</span></div></div>
+                </div>
             </div>
         </div>
     </div>
 </main>
 
-<footer>
-    <div class="footer-grid">
-        <div class="footer-col"><h4>Tech Software</h4><p>"Code that converts, design that inspires."</p></div>
-        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#">Home</a></li><li><a href="#">Services</a></li><li><a href="#">Work</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Services</h4><ul><li>Custom Dev</li><li>Mobile Apps</li><li>Web Dev</li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><p>solutionsfirstsoftware@gmail.comS</p><p>+27 82 505 4974</p><p>South Africa</p></div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand"><div class="logo" style="font-size: 1.5rem;">Tech Software</div><p>Creating beautiful, conversion-focused websites that help businesses grow online.</p><div class="footer-icon-list"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-dribbble"></i></a></div></div>
+            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="work.html">Work</a></li><li><a href="aboutus.html">About</a></li><li><a href="contactus.html">Contact</a></li></ul></div>
+            <div class="footer-col"><h4>Services</h4><ul><li>Website Design</li><li>Website Redesign</li><li>Portfolio Creation</li><li>Landing Pages</li></ul></div>
+            <div class="footer-col footer-contact"><h4>Contact</h4><p><i class="fas fa-envelope"></i>solutionsfirstsoftware@gmail.com</p><p><i class="fas fa-phone-alt"></i>+27 82 505 4974</p><p><i class="fas fa-map-marker-alt"></i>South Africa</p></div>
+        </div>
+        <div class="footer-bottom"><div>© 2026 Tech Software. All rights reserved.</div><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div></div>
     </div>
-    <hr>
-    <div class="footer-bottom"><span>&copy; 2026 Tech Software. All rights reserved.</span><span>Privacy Policy</span><span>Terms of Service</span></div>
 </footer>
 
+<script>
+    (function() {
+        // Hamburger Menu
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        const overlay = document.getElementById('menuOverlay');
+        function closeMenu() { navLinks?.classList.remove('active'); overlay?.classList.remove('active'); document.body.classList.remove('menu-open'); if(hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>'; }
+        function openMenu() { navLinks?.classList.add('active'); overlay?.classList.add('active'); document.body.classList.add('menu-open'); if(hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-times"></i>'; }
+        if(hamburgerBtn) hamburgerBtn.addEventListener('click', () => navLinks?.classList.contains('active') ? closeMenu() : openMenu());
+        if(overlay) overlay.addEventListener('click', closeMenu);
+        document.querySelectorAll('.nav-link, .btn-nav').forEach(link => link.addEventListener('click', closeMenu));
+        
+        // Dark Mode Toggle
+        const toggleDark = document.getElementById('darkModeToggle');
+        if(toggleDark) {
+            const saved = localStorage.getItem('techThemeFinal');
+            if(saved === 'dark') { document.body.classList.add('dark-mode'); toggleDark.innerHTML = '<i class="fas fa-sun"></i>'; }
+            toggleDark.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                toggleDark.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('techThemeFinal', isDark ? 'dark' : 'light');
+            });
+        }
+        
+        // Alert for all interactive buttons
+        document.querySelectorAll('.preview-btn, .view-project-link, .cta-btn-primary, .hero-buttons .btn-primary, .hero-buttons .btn-outline, .cta-btn-outline, .btn-template').forEach(btn => {
+            btn.addEventListener('click', (e) => { 
+                e.preventDefault(); 
+                alert('✨ Let\'s bring your vision to life! Get in touch for a free consultation.'); 
+            });
+        });
+    })();
+</script>
 
-/* left the css below as a backup in case of any issues with the external style.css file. It is also included in the external style.css file for better organization */
 <style>
-        /* RESET & GLOBAL */
         * {
             margin: 0;
             padding: 0;
@@ -127,7 +158,7 @@
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
             color: #111111;
-            line-height: 1.4;
+            line-height: 1.5;
             scroll-behavior: smooth;
             transition: background-color 0.25s ease, color 0.25s ease;
         }
@@ -135,7 +166,7 @@
         /* DARK MODE */
         body.dark-mode {
             background: #0A1525;
-            color: #B2F0F0;
+            color: #E2E8F0;
         }
 
         body.dark-mode .navbar {
@@ -187,28 +218,6 @@
         body.dark-mode .btn-outline:hover {
             background: rgba(79, 209, 197, 0.1);
         }
-        body.dark-mode .laptop-frame {
-            background: #1A2A40;
-            border-color: #2A4A6A;
-        }
-        body.dark-mode .preview-circle {
-            background: #4FD1C5;
-        }
-        body.dark-mode .preview-bar {
-            background: #4A7A9A;
-        }
-        body.dark-mode .preview-lines {
-            background: #3A6A8A;
-        }
-        body.dark-mode .section-header h2 {
-            background: linear-gradient(120deg, #7DD3E8, #4FD1C5);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        body.dark-mode .section-subhead {
-            color: #B2F0F0;
-        }
         body.dark-mode .feature-card {
             background: #1A2A40;
             border-color: #2A4A6A;
@@ -229,8 +238,21 @@
         body.dark-mode .work-info h4 {
             color: #B2F0F0;
         }
+        body.dark-mode .work-description {
+            color: #B2F0F0;
+        }
         body.dark-mode .view-project-link {
-            color: #4FD1C5;
+            background: #2563eb;
+            color: white;
+        }
+        body.dark-mode .view-project-link:hover {
+            background: #3b82f6;
+        }
+        body.dark-mode .client-badge-right {
+            background: rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(4px);
+            color: #7DD3E8;
+            border-color: rgba(79, 209, 197, 0.3);
         }
         body.dark-mode .template-card {
             background: #1A2A40;
@@ -245,57 +267,28 @@
         body.dark-mode .template-features li {
             color: #B2F0F0;
         }
-        body.dark-mode .btn-demo {
-            background: #2A4A6A;
-            color: #4FD1C5;
+        body.dark-mode .template-features li::before {
+            background: #4FD1C5;
         }
-        body.dark-mode .btn-demo:hover {
-            background: #3A6A8A;
-        }
-        body.dark-mode .btn-pricing {
-            background: #1A6BA0;
+        body.dark-mode .btn-template {
+            background: #2563eb;
             color: white;
         }
-        body.dark-mode .service-card {
-            background: #1A2A40;
-            border-color: #2A4A6A;
-        }
-        body.dark-mode .service-card p {
-            color: #B2F0F0;
-        }
-        body.dark-mode .service-card i {
-            color: #4FD1C5;
-        }
-        body.dark-mode .service-tags span {
-            background: #2A4A6A;
-            color: #4FD1C5;
+        body.dark-mode .btn-template:hover {
+            background: #3b82f6;
         }
         body.dark-mode .cta-section {
             background: linear-gradient(135deg, #1A2A40, #1A3A50);
-            border-color: #2A5A7A;
         }
-        body.dark-mode .cta-section h2 {
-            color: #B2F0F0;
-        }
-        body.dark-mode .cta-section p {
-            color: #B2F0F0;
-        }
-        body.dark-mode .cta-button {
-            background: #1A6BA0;
-        }
-        body.dark-mode .cta-button:hover {
-            background: #2A8AC0;
-        }
-        body.dark-mode footer {
+        body.dark-mode .footer {
             background: #0A1525;
             border-top-color: #1A3A50;
         }
         body.dark-mode .footer-col h4 {
             color: #7DD3E8;
         }
-        body.dark-mode .footer-col li, body.dark-mode .footer-col p {
-            color: #B2F0F0;
-        }
+        body.dark-mode .footer-col p, 
+        body.dark-mode .footer-col li,
         body.dark-mode .footer-col a {
             color: #B2F0F0;
         }
@@ -303,10 +296,11 @@
             color: #4FD1C5;
         }
         body.dark-mode .footer-bottom {
-            color: #B2F0F0;
+            border-top-color: #1A3A50;
+            color: #8BA0B0;
         }
-        body.dark-mode hr {
-            background: #2A4A6A;
+        body.dark-mode .footer-legal a {
+            color: #8BA0B0;
         }
 
         .container {
@@ -315,7 +309,7 @@
             padding: 0 24px;
         }
 
-        /* ===== NAVBAR WITH HAMBURGER ===== */
+        /* NAVBAR */
         .navbar {
             position: sticky;
             top: 0;
@@ -339,7 +333,7 @@
             font-size: 1.55rem;
             font-weight: 700;
             letter-spacing: -0.3px;
-            background: linear-gradient(135deg, #0A2540, #1A6BA0);
+            background: linear-gradient(135deg, #0A2540, #2563eb);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -375,7 +369,7 @@
             font-size: 0.95rem;
             white-space: nowrap;
         }
-        .nav-link:hover { color: #1A6BA0; }
+        .nav-link:hover { color: #2563eb; }
         .btn-nav {
             background: #0A2540;
             padding: 0.45rem 1.3rem;
@@ -392,7 +386,7 @@
         }
         .btn-nav:hover {
             transform: translateY(-2px);
-            background: #1A6BA0;
+            background: #2563eb;
         }
         .theme-toggle {
             background: #E8F0FE;
@@ -413,9 +407,7 @@
         }
 
         @media (max-width: 840px) {
-            .hamburger {
-                display: block;
-            }
+            .hamburger { display: block; }
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -439,24 +431,10 @@
                 background: rgba(10, 21, 37, 0.98);
                 border-right-color: #1A3A50;
             }
-            .nav-links.active {
-                left: 0;
-            }
-            .nav-link {
-                font-size: 1.1rem;
-                white-space: normal;
-                width: 100%;
-                padding: 0.5rem 0;
-            }
-            .btn-nav {
-                width: 100%;
-                text-align: center;
-                margin-top: 0.5rem;
-            }
-            .theme-toggle {
-                margin-top: 0.5rem;
-                align-self: flex-start;
-            }
+            .nav-links.active { left: 0; }
+            .nav-link { font-size: 1.1rem; white-space: normal; width: 100%; padding: 0.5rem 0; }
+            .btn-nav { width: 100%; text-align: center; margin-top: 0.5rem; }
+            .theme-toggle { margin-top: 0.5rem; align-self: flex-start; }
             .menu-overlay {
                 position: fixed;
                 top: 0;
@@ -470,96 +448,54 @@
                 visibility: hidden;
                 transition: 0.2s;
             }
-            .menu-overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            body.menu-open {
-                overflow: hidden;
-            }
+            .menu-overlay.active { opacity: 1; visibility: visible; }
+            body.menu-open { overflow: hidden; }
         }
 
         /* HERO SECTION */
         .hero {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
             align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            margin: 2rem 0 4rem;
+            gap: 3rem;
+            margin: 3rem 0 5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .hero-content {
-            flex: 1;
-            min-width: 260px;
+            min-width: 280px;
         }
         .hero-content h1 {
-            font-size: 2.3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.1;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #0A2540, #1A6BA0);
+            background: linear-gradient(135deg, #0A2540, #2563eb);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .highlight {
+            display: block;
         }
         .hero-content p {
             font-size: 1rem;
             color: #5E6B7C;
-            margin-bottom: 1.8rem;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            background: #0A2540;
-            border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 200px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            color: white;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-        .btn-primary:hover {
-            background: #1A6BA0;
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #B0C4DE;
-            color: #0A2540;
-            padding: 0.7rem 1.5rem;
-            border-radius: 200px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-        .btn-outline:hover {
-            background: #E8F0FE;
-            transform: translateY(-2px);
+            margin-bottom: 2rem;
+            line-height: 1.5;
         }
         .laptop-mockup {
-            flex: 1;
-            max-width: 480px;
-            min-width: 260px;
+            max-width: 100%;
         }
         .laptop-frame {
             background: #DEE7EF;
             border-radius: 28px 28px 18px 18px;
-            padding: 10px 10px 18px 10px;
-            box-shadow: 0 24px 36px -16px rgba(0,0,0,0.08);
+            padding: 12px 12px 20px 12px;
+            box-shadow: 0 25px 40px -18px rgba(0,0,0,0.15);
             border: 1px solid #C5D5E5;
         }
         .laptop-screen {
@@ -568,208 +504,363 @@
             overflow: hidden;
             aspect-ratio: 16 / 9;
         }
-        .website-preview {
+        .media-container {
             width: 100%;
             height: 100%;
-            background: linear-gradient(145deg, #E8F0FE, #D4E6F9);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
-        .preview-circle { width: 40px; height: 40px; background: #1A6BA0; border-radius: 50%; margin: 8px; }
-        .preview-bar { width: 60%; height: 8px; background: #9BB8D4; border-radius: 20px; margin: 5px 0; }
-        .preview-lines { width: 50%; height: 6px; background: #7FA1C3; border-radius: 8px; margin: 5px 0; }
-        .keyboard-base { height: 8px; background: #C5D5E5; margin-top: 6px; border-radius: 0 0 18px 18px; width: 90%; margin-left: auto; margin-right: auto; }
+        .media-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .keyboard-base {
+            height: 8px;
+            background: #C5D5E5;
+            margin-top: 6px;
+            border-radius: 0 0 18px 18px;
+            width: 92%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            background: #2563eb;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 200px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: white;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #2563eb;
+            color: #2563eb;
+            padding: 0.8rem 1.8rem;
+            border-radius: 200px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+        .btn-outline:hover { background: #eff6ff; transform: translateY(-2px); }
 
         .section-header { text-align: center; margin: 3rem 0 1.5rem; }
-        .section-header h2 { font-size: 1.8rem; font-weight: 700; background: linear-gradient(120deg, #0A2540, #1A6BA0); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
+        .section-header h2 { font-size: 1.8rem; font-weight: 700; background: linear-gradient(120deg, #0A2540, #2563eb); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
         .section-subhead { text-align: center; color: #5E6B7C; max-width: 680px; margin: 0 auto 2rem; font-size: 0.95rem; }
-        
-        /* ===== 3-COLUMN GRID - RESPONSIVE ON ALL SCREENS ===== */
-        /* Base: always 3 columns on desktop and larger screens */
+
         .three-col-grid {
             display: grid;
             gap: 1.5rem;
             margin: 2rem 0 3rem;
             grid-template-columns: repeat(3, 1fr);
         }
-        
+        .feature-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 1.8rem 1.2rem;
+            border: 1px solid #D0E4F7;
+            transition: 0.25s ease;
+        }
+        .feature-card:hover { transform: translateY(-4px); border-color: #2563eb; }
+        .feature-icon { font-size: 2rem; color: #2563eb; margin-bottom: 0.8rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+        /* WORK GRID */
         .work-grid {
             display: grid;
-            gap: 1.8rem;
-            margin: 2rem 0;
             grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0 3rem;
         }
-        
+        .work-item {
+            background: #FFFFFF;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .work-item:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
+        .work-img {
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .work-item:nth-child(1) .work-img { background: linear-gradient(135deg, #0F172A, #2563eb); }
+        .work-item:nth-child(2) .work-img { background: linear-gradient(135deg, #0C4A6E, #2563eb); }
+        .work-item:nth-child(3) .work-img { background: linear-gradient(135deg, #2D3748, #2563eb); }
+        .concept-icon { font-size: 3rem; color: rgba(255,255,255,0.9); margin-bottom: 0.5rem; }
+        .client-badge-right {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        .work-info { padding: 1.5rem; }
+        .work-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #2563eb; font-weight: 700; margin-bottom: 0.5rem; display: inline-block; }
+        .work-info h4 { font-size: 1.35rem; font-weight: 700; margin: 0.25rem 0 0.5rem; color: #0F172A; }
+        .work-description { font-size: 0.85rem; color: #475569; margin-bottom: 1.2rem; line-height: 1.4; }
+        .view-project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        .view-project-link:hover {
+            background: #1d4ed8;
+            transform: translateX(5px);
+        }
+
+        /* TEMPLATE GRID */
         .template-grid {
             display: grid;
             gap: 1.8rem;
             margin: 2rem 0;
             grid-template-columns: repeat(3, 1fr);
         }
-        
-        .service-list {
-            display: grid;
-            gap: 1.8rem;
-            margin: 2rem 0;
-            grid-template-columns: repeat(3, 1fr);
+        .template-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            border: 1px solid #D0E4F7;
+            transition: 0.3s;
+            overflow: hidden;
         }
-        
-        /* Responsive adjustments for tablets - switch to 2 columns */
+        .template-card:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
+        .template-top {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gradient-blue { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .gradient-purple { background: linear-gradient(135deg, #9333ea, #ec4899); }
+        .gradient-orange { background: linear-gradient(135deg, #f97316, #ef4444); }
+        .template-top i { font-size: 2.5rem; color: white; }
+        .template-body { padding: 1.5rem; }
+        .template-body h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .template-body p { font-size: 0.85rem; color: #5E6B7C; margin-bottom: 1rem; }
+        .template-features {
+            list-style: none;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .template-features li {
+            font-size: 0.85rem;
+            padding: 0.3rem 0;
+            color: #5E6B7C;
+            padding-left: 24px;
+            position: relative;
+        }
+        .template-features li::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: #2563eb;
+            border-radius: 50%;
+        }
+        .btn-template {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            border-radius: 40px;
+        }
+        .btn-template:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #1d4ed8, #2563eb, #7c3aed);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 48px;
+            text-align: center;
+        }
+        .cta-container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .cta-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: #e0f2fe;
+            margin-bottom: 1.2rem;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: #e0e7ff;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .cta-btn-primary {
+            background: white;
+            color: #2563eb;
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.3s ease;
+        }
+        .cta-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+        .cta-btn-outline {
+            background: transparent;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            border: 2px solid rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .cta-btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .cta-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin: 2rem auto;
+            width: 80%;
+        }
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: white;
+            font-size: 0.85rem;
+        }
+        .feature-item strong {
+            font-weight: 600;
+        }
+        .feature-item span {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #F8FAFE;
+            border-top: 1px solid #E2E8F0;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-col h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1.2rem; color: #0A2540; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.5; color: #5C6B7A; margin-top: 0.8rem; }
+        .footer-icon-list { display: flex; gap: 1rem; margin-top: 1rem; }
+        .footer-icon-list a { color: #5C6B7A; font-size: 1rem; transition: color 0.2s; }
+        .footer-icon-list a:hover { color: #2563eb; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.6rem; }
+        .footer-col a { text-decoration: none; color: #5C6B7A; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-col a:hover { color: #2563eb; }
+        .footer-contact p { font-size: 0.85rem; margin-bottom: 0.6rem; color: #5C6B7A; display: flex; align-items: center; gap: 0.6rem; }
+        .footer-contact i { width: 20px; color: #2563eb; }
+        .footer-bottom {
+            border-top: 1px solid #E2E8F0;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #7A8B9C;
+        }
+        .footer-legal { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .footer-legal a { text-decoration: none; color: #7A8B9C; transition: color 0.2s; }
+        .footer-legal a:hover { color: #2563eb; }
+
         @media (max-width: 992px) {
-            .three-col-grid,
-            .work-grid,
-            .template-grid,
-            .service-list {
+            .hero { grid-template-columns: 1fr; gap: 2rem; }
+            .three-col-grid, .work-grid, .template-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-brand { grid-column: span 2; }
         }
-        
-        /* Mobile devices - switch to 1 column for better readability */
         @media (max-width: 640px) {
-            .three-col-grid,
-            .work-grid,
-            .template-grid,
-            .service-list {
+            .hero-content h1 { font-size: 2.2rem; }
+            .three-col-grid, .work-grid, .template-grid {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        .feature-card { background: #FFFFFF; border-radius: 28px; padding: 1.8rem 1.2rem; border: 1px solid #D0E4F7; transition: 0.25s ease; }
-        .feature-icon { font-size: 2rem; color: #1A6BA0; margin-bottom: 0.8rem; }
-        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-        
-        .work-item { background: #FFFFFF; border-radius: 28px; overflow: hidden; border: 1px solid #D0E4F7; transition: all 0.3s ease; cursor: pointer; }
-        .work-item:nth-child(1) .work-img { background: linear-gradient(135deg, #0A2540, #1A6BA0); display: flex; align-items: center; justify-content: center; font-size: 2rem; height: 200px; }
-        .work-item:nth-child(2) .work-img { background: linear-gradient(135deg, #1E4A76, #2E7DA6); display: flex; align-items: center; justify-content: center; font-size: 2rem; height: 200px; }
-        .work-item:nth-child(3) .work-img { background: linear-gradient(135deg, #143856, #2580B0); display: flex; align-items: center; justify-content: center; font-size: 2rem; height: 200px; }
-        .work-img { color: white; transition: transform 0.3s ease; }
-        .work-info { padding: 1.2rem; }
-        .work-category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #1A6BA0; font-weight: 700; }
-        .work-info h4 { margin: 0.4rem 0 0.6rem; font-size: 1.2rem; }
-        .view-project-link { display: inline-flex; align-items: center; gap: 0.5rem; color: #1A6BA0; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: gap 0.2s; }
-        
-        .template-card { background: #FFFFFF; border-radius: 28px; padding: 1.5rem; border: 1px solid #D0E4F7; display: flex; flex-direction: column; }
-        .template-card i { font-size: 1.8rem; color: #1A6BA0; margin-bottom: 0.5rem; }
-        .template-card h3 { margin: 0.5rem 0; }
-        .template-features { list-style: none; margin: 0.8rem 0 1rem; }
-        .template-features li { font-size: 0.85rem; padding: 0.2rem 0; color: #5E6B7C; }
-        .template-buttons { display: flex; gap: 0.6rem; margin-top: auto; flex-wrap: wrap; }
-        .btn-demo, .btn-pricing { flex: 1; text-align: center; padding: 0.55rem 0; border-radius: 60px; font-size: 0.75rem; font-weight: 600; cursor: pointer; border: none; transition: 0.2s; text-decoration: none; display: inline-block; }
-        .btn-demo { background: #E8F0FE; color: #1A6BA0; }
-        .btn-pricing { background: #1A6BA0; color: white; }
-        
-        .service-card { background: #FFFFFF; border-radius: 24px; padding: 1.5rem; border: 1px solid #D0E4F7; }
-        .service-card i { color: #1A6BA0; font-size: 1.8rem; margin-bottom: 0.5rem; display: inline-block; }
-        .service-card h3 { margin: 0.5rem 0; }
-        .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-        .service-tags span { background: #E8F0FE; padding: 0.2rem 0.7rem; border-radius: 30px; font-size: 0.65rem; font-weight: 500; color: #1A6BA0; }
-        
-        .cta-section { background: linear-gradient(135deg, #E8F0FE, #D0E4F7); border-radius: 40px; padding: 2rem 1.5rem; text-align: center; margin: 3rem 0; }
-        .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .cta-button { background: #1A6BA0; color: white; border: none; padding: 0.8rem 1.8rem; border-radius: 200px; font-weight: 600; margin-top: 1rem; cursor: pointer; transition: 0.2s; }
-        
-        footer { background: #F5F9FF; border-top: 1px solid #D0E4F7; padding: 2.5rem 1.5rem 1.5rem; margin-top: 3rem; }
-        .footer-grid { max-width: 1400px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; }
-        .footer-col h4 { margin-bottom: 1rem; font-weight: 600; color: #0A2540; }
-        .footer-col li, .footer-col p { margin-bottom: 0.5rem; font-size: 0.8rem; color: #5C6B7A; }
-        .footer-col a { text-decoration: none; color: #5C6B7A; transition: 0.2s; }
-        .footer-col a:hover { color: #1A6BA0; }
-        .footer-bottom { text-align: center; padding-top: 1.8rem; font-size: 0.7rem; color: #7A8B9C; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
-        hr { margin: 1.2rem auto; max-width: 1400px; border: 0; height: 1px; background: #D0E4F7; }
-
-        @media (max-width: 780px) {
-            .hero-content h1 { font-size: 1.9rem; }
-            .container { padding: 0 18px; }
-            .section-header h2 { font-size: 1.6rem; }
-        }
-        @media (max-width: 480px) {
-            .hero-content h1 { font-size: 1.7rem; }
+            .footer-grid, .footer-brand { grid-template-columns: 1fr; grid-column: span 1; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .cta-section h2 { font-size: 1.8rem; }
         }
     </style>
-<script>
-    (function() {
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
-        const overlay = document.getElementById('menuOverlay');
-        
-        function closeMenu() {
-            if (navLinks) navLinks.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-        
-        function openMenu() {
-            if (navLinks) navLinks.classList.add('active');
-            if (overlay) overlay.classList.add('active');
-            document.body.classList.add('menu-open');
-            if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-times"></i>';
-        }
-        
-        function toggleMenu() {
-            if (navLinks && navLinks.classList.contains('active')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        }
-        
-        if (hamburgerBtn) {
-            hamburgerBtn.addEventListener('click', toggleMenu);
-        }
-        if (overlay) {
-            overlay.addEventListener('click', closeMenu);
-        }
-        
-        const allNavItems = document.querySelectorAll('.nav-link, .btn-nav');
-        allNavItems.forEach(link => {
-            link.addEventListener('click', () => { closeMenu(); });
-        });
-        
-        const toggleDark = document.getElementById('darkModeToggle');
-        if (toggleDark) {
-            const savedTheme = localStorage.getItem('techThemeHomepage');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
-            }
-            
-            toggleDark.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                const isDark = document.body.classList.contains('dark-mode');
-                toggleDark.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-                localStorage.setItem('techThemeHomepage', isDark ? 'dark' : 'light');
-            });
-        }
-        
-        document.querySelectorAll('.demo-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('✨ Live demo preview (responsive mockup)');
-            });
-        });
-        
-       
-        
-        document.getElementById('consultBtn')?.addEventListener('click', () => {
-            alert('📅 Schedule your free consultation!');
-        });
-        
-      
-        
-        document.querySelectorAll('.hero-buttons .btn-primary, .hero-buttons .btn-outline').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (btn.classList.contains('btn-primary')) {
-                    alert('✨ Check out our portfolio of amazing projects!');
-                } else {
-                    alert('🚀 Let\'s get started on your website journey!');
-                }
-            });
-        });
-    })();
-</script>
 </body>
 </html>
