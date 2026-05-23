@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="color-scheme" content="light">
 </head>
 <body>
 
@@ -235,32 +236,49 @@
             link.addEventListener('click', () => { closeMenu(); });
         });
 
-        const toggleDark = document.getElementById('darkModeToggle');
-        const body = document.body;
-        
-        function setTheme(theme) {
-            if (theme === 'light') {
-                body.classList.remove('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('techThemeWork', 'light');
-            } else {
-                body.classList.add('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('techThemeWork', 'dark');
-            }
-        }
-        
-        const savedTheme = localStorage.getItem('techThemeWork');
-        if (savedTheme === 'dark') setTheme('dark');
-        else setTheme('light');
-        
-        if (toggleDark) {
-            toggleDark.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) setTheme('light');
-                else setTheme('dark');
-            });
-        }
+       // Dark mode toggle
+const toggleDark = document.getElementById('darkModeToggle');
 
+if (toggleDark) {
+
+    // Load saved theme
+    const savedTheme =
+        localStorage.getItem('techThemeFinal') || 'light';
+
+    // Apply saved theme
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.documentElement.style.colorScheme = 'dark';
+        toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.documentElement.style.colorScheme = 'light';
+        toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+
+    // Switch theme when button is clicked
+    toggleDark.addEventListener('click', () => {
+
+        document.body.classList.toggle('dark-mode');
+
+        const isDark =
+            document.body.classList.contains('dark-mode');
+
+        document.documentElement.style.colorScheme =
+            isDark ? 'dark' : 'light';
+
+        // Change icon
+        toggleDark.innerHTML = isDark
+            ? '<i class="fas fa-sun"></i>'
+            : '<i class="fas fa-moon"></i>';
+
+        // Save preference
+        localStorage.setItem(
+            'techThemeFinal',
+            isDark ? 'dark' : 'light'
+        );
+    });
+}
         const projectCards = document.querySelectorAll('.project-card');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -269,6 +287,7 @@
                     observer.unobserve(entry.target);
                 }
             });
+
         }, { threshold: 0.1 });
         projectCards.forEach(card => observer.observe(card));
 
@@ -325,6 +344,16 @@
             line-height: 1.5;
             scroll-behavior: smooth;
             transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+                /* Prevent automatic browser dark mode */
+        :root {
+            color-scheme: light;
+        }
+
+        /* Enable browser dark mode only when selected */
+        body.dark-mode {
+            color-scheme: dark;
         }
 
         body.dark-mode {

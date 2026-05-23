@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
+    <meta name="color-scheme" content="light">
 </head>
 <body>
 
@@ -114,8 +114,7 @@
             </div>
         </div>
 
-        <!-- CTA Section -->
-     
+        <!-- CTA Section - FIXED with longer pill-shaped buttons -->
         <div class="cta-section">
             <div class="cta-container">
                 <span class="cta-badge">✨ Ready to get started?</span>
@@ -213,49 +212,48 @@
             link.addEventListener('click', () => { closeMenu(); });
         });
 
-        // ========== DARK MODE TOGGLE (FIXED) ==========
+        // ========== DARK MODE TOGGLE ==========
         const toggleDark = document.getElementById('darkModeToggle');
-        const body = document.body;
-        
-        function setTheme(theme) {
-            if (theme === 'light') {
-                body.classList.remove('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('techThemeServices', 'light');
-            } else {
-                body.classList.add('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('techThemeServices', 'dark');
-            }
-        }
-        
-        // Load saved theme
-        const savedTheme = localStorage.getItem('techThemeServices');
-        if (savedTheme === 'dark') {
-            setTheme('dark');
-        } else if (savedTheme === 'light') {
-            setTheme('light');
-        } else {
-            // Check system preference or default to light
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setTheme('dark');
-            } else {
-                setTheme('light');
-            }
-        }
-        
+
         if (toggleDark) {
+            // Load saved theme from localStorage
+            const savedTheme = localStorage.getItem('techThemeFinal') || 'light';
+
+            // Apply saved theme
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.documentElement.style.colorScheme = 'dark';
+                toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.documentElement.style.colorScheme = 'light';
+                toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+
+            // Switch theme when button is clicked
             toggleDark.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    setTheme('light');
-                } else {
-                    setTheme('dark');
-                }
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+                toggleDark.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('techThemeFinal', isDark ? 'dark' : 'light');
             });
         }
+        
+        // Alert for demo buttons
+        document.querySelectorAll('.service-card .btn-template, .service-card .view-project-link, .cta-btn-primary, .cta-btn-outline').forEach(btn => {
+            if (btn && !btn.hasAttribute('data-listener')) {
+                btn.setAttribute('data-listener', 'true');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('✨ Let\'s bring your vision to life! Get in touch for a free consultation.');
+                });
+            }
+        });
     })();
 </script>
- <style>
+
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -271,6 +269,16 @@
             transition: background-color 0.25s ease, color 0.25s ease;
         }
 
+        /* Prevent automatic browser dark mode */
+        :root {
+            color-scheme: light;
+        }
+
+        /* Apply browser dark mode only when selected */
+        body.dark-mode {
+            color-scheme: dark;
+        }
+        
         /* ===== DARK MODE STYLES - COMPLETE FIX ===== */
         body.dark-mode {
             background: #0A1525;
@@ -347,25 +355,48 @@
             color: #4FD1C5;
         }
 
+        /* Dark mode CTA section - properly styled */
         body.dark-mode .cta-section {
-            background: linear-gradient(135deg, #1A2A40, #1A3A50);
+            background: linear-gradient(135deg, #0F2A3A, #1A3A50, #2A4A6A);
         }
-
+        
         body.dark-mode .cta-section h2 {
+            color: #7DD3E8 !important;
+        }
+        
+        body.dark-mode .cta-section p {
+            color: #CBD5E1 !important;
+        }
+        
+        body.dark-mode .cta-badge {
+            background: rgba(125, 211, 232, 0.2);
             color: #7DD3E8;
         }
-
-        body.dark-mode .cta-section p {
-            color: #B2F0F0;
-        }
-
-        body.dark-mode .btn-primary {
+        
+        body.dark-mode .cta-btn-primary {
             background: #1A6BA0;
             color: white;
         }
-
-        body.dark-mode .btn-primary:hover {
+        
+        body.dark-mode .cta-btn-primary:hover {
             background: #2A8AC0;
+        }
+        
+        body.dark-mode .cta-btn-outline {
+            border-color: #4FD1C5;
+            color: #4FD1C5;
+        }
+        
+        body.dark-mode .cta-btn-outline:hover {
+            background: rgba(79, 209, 197, 0.1);
+        }
+        
+        body.dark-mode .feature-item {
+            color: #CBD5E1;
+        }
+        
+        body.dark-mode .cta-divider {
+            background: rgba(125, 211, 232, 0.3);
         }
 
         body.dark-mode footer {
@@ -627,7 +658,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            border-radius: 0px;
+            border-radius: 16px;
         }
 
         .service-card:hover {
@@ -681,56 +712,7 @@
             flex-shrink: 0;
         }
 
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background: linear-gradient(135deg, #E8F0FE, #D0E4F7);
-            padding: 2.5rem;
-            margin: 2rem 0 3rem;
-            border-radius: 0px;
-        }
-
-        .cta-section h2 {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-            color: #0A2540;
-        }
-
-        .cta-section p {
-            margin-bottom: 1.2rem;
-            color: #5E6B7C;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* LONGER RECTANGLE BUTTON */
-        .btn-primary {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 0.9rem 2.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            border-radius: 0px;
-            min-width: 240px;
-            justify-content: center;
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
-        }
-
-        
-        /* CTA SECTION */
+        /* CTA SECTION - FIXED with longer pill-shaped buttons matching services page */
         .cta-section {
             background: linear-gradient(135deg, #1d4ed8, #2563eb, #7c3aed);
             padding: 5rem 2rem;
@@ -782,17 +764,21 @@
             gap: 1.2rem;
             flex-wrap: wrap;
         }
+        /* Longer pill-shaped buttons */
         .cta-btn-primary {
             background: white;
             color: #2563eb;
-            padding: 1rem 2.2rem;
-            border-radius: 14px;
+            padding: 1rem 3rem;
             font-weight: 700;
+            border-radius: 999px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             gap: 0.5rem;
             transition: 0.3s ease;
+            min-width: 260px;
         }
         .cta-btn-primary:hover {
             transform: translateY(-3px);
@@ -801,12 +787,22 @@
         .cta-btn-outline {
             background: transparent;
             color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 14px;
+            padding: 1rem 3rem;
             font-weight: 700;
+            border-radius: 999px;
             border: 2px solid rgba(255,255,255,0.5);
             text-decoration: none;
             transition: 0.3s ease;
+            justify-content: center;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 260px;
+        }
+        .cta-buttons a {
+            flex: 1;
+            max-width: 350px;
         }
         .cta-btn-outline:hover {
             background: rgba(255,255,255,0.1);
@@ -918,16 +914,16 @@
             }
 
             .cta-section h2 {
-                font-size: 1.3rem;
+                font-size: 2rem;
             }
 
             .service-card {
                 padding: 1.5rem;
             }
-
-            .btn-primary {
-                padding: 0.8rem 1.8rem;
-                min-width: 200px;
+            
+            .cta-btn-primary, .cta-btn-outline {
+                padding: 0.9rem 2rem;
+                min-width: 220px;
             }
         }
 
@@ -938,6 +934,15 @@
 
             .hero-section h1 {
                 font-size: 1.8rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .cta-btn-primary, .cta-btn-outline {
+                padding: 0.8rem 1.5rem;
+                min-width: 100%;
             }
         }
     </style>

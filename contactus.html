@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <meta name="color-scheme" content="light">
 </head>
 <body>
 
@@ -85,24 +85,23 @@
 </main>
 
 <!-- CTA Section -->
-        <div class="cta-section">
-            <div class="cta-container">
-                <span class="cta-badge">✨ Ready to get started?</span>
-                <h2>Let's build your website</h2>
-                <p>Transform your online presence with a professional website that drives results. Get started today and see the difference a great website can make.</p>
-                <div class="cta-buttons">
-                    <a href="services.html" class="cta-btn-primary">Start a Project <i class="fas fa-arrow-right"></i></a>
-                    <a href="pricing.html" class="cta-btn-outline">View Pricing</a>
-                </div>
-                <div class="cta-divider"></div>
-                <div class="cta-features">
-                    <div class="feature-item"><span>⚡</span><div><strong>Fast Turnaround</strong><br><span>2–4 weeks delivery</span></div></div>
-                    <div class="feature-item"><span>✓</span><div><strong>Quality Guaranteed</strong><br><span>100% satisfaction</span></div></div>
-                    <div class="feature-item"><span>🎨</span><div><strong>Unlimited Revisions</strong><br><span>Until you're happy</span></div></div>
-                </div>
-            </div>
+<div class="cta-section">
+    <div class="cta-container">
+        <span class="cta-badge">✨ Ready to get started?</span>
+        <h2>Let's build your website</h2>
+        <p>Transform your online presence with a professional website that drives results. Get started today and see the difference a great website can make.</p>
+        <div class="cta-buttons">
+            <a href="services.html" class="cta-btn-primary">Start a Project <i class="fas fa-arrow-right"></i></a>
+            <a href="pricing.html" class="cta-btn-outline">View Pricing</a>
+        </div>
+        <div class="cta-divider"></div>
+        <div class="cta-features">
+            <div class="feature-item"><span>⚡</span><div><strong>Fast Turnaround</strong><br><span>2–4 weeks delivery</span></div></div>
+            <div class="feature-item"><span>✓</span><div><strong>Quality Guaranteed</strong><br><span>100% satisfaction</span></div></div>
+            <div class="feature-item"><span>🎨</span><div><strong>Unlimited Revisions</strong><br><span>Until you're happy</span></div></div>
         </div>
     </div>
+</div>
 
 <footer>
     <div class="footer-grid">
@@ -179,38 +178,31 @@
             link.addEventListener('click', closeMenu);
         });
 
-        // ========== DARK MODE TOGGLE ==========
+        // ========== DARK MODE TOGGLE (FIXED) ==========
         const toggleDark = document.getElementById('darkModeToggle');
-        const body = document.body;
-        
-        function setTheme(theme) {
-            if (theme === 'light') {
-                body.classList.remove('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('techThemeContact', 'light');
-            } else {
-                body.classList.add('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('techThemeContact', 'dark');
-            }
-        }
-        
-        const savedTheme = localStorage.getItem('techThemeContact');
-        if (savedTheme === 'dark') {
-            setTheme('dark');
-        } else if (savedTheme === 'light') {
-            setTheme('light');
-        } else {
-            setTheme('light');
-        }
         
         if (toggleDark) {
+            // Load saved theme
+            const savedTheme = localStorage.getItem('techThemeContact') || 'light';
+            
+            // Apply saved theme
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.documentElement.style.colorScheme = 'dark';
+                toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.documentElement.style.colorScheme = 'light';
+                toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            
+            // Switch theme when button is clicked
             toggleDark.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    setTheme('light');
-                } else {
-                    setTheme('dark');
-                }
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+                toggleDark.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('techThemeContact', isDark ? 'dark' : 'light');
             });
         }
 
@@ -266,7 +258,16 @@
             transition: background-color 0.25s ease, color 0.25s ease;
         }
 
-        /* DARK MODE - consistent with main site */
+        /* Prevent automatic browser dark mode interference */
+        :root {
+            color-scheme: light;
+        }
+        
+        body.dark-mode {
+            color-scheme: dark;
+        }
+
+        /* DARK MODE - complete styling */
         body.dark-mode {
             background: #0A1525;
             color: #B2F0F0;
@@ -352,6 +353,42 @@
         body.dark-mode .whatsapp-btn:hover {
             background: #128C7E;
         }
+        
+        /* DARK MODE CTA SECTION - FIXED */
+        body.dark-mode .cta-section {
+            background: linear-gradient(135deg, #0F2A3A, #1A3A50, #2A4A6A);
+        }
+        body.dark-mode .cta-section h2 {
+            color: #7DD3E8 !important;
+        }
+        body.dark-mode .cta-section p {
+            color: #CBD5E1 !important;
+        }
+        body.dark-mode .cta-badge {
+            background: rgba(125, 211, 232, 0.2);
+            color: #7DD3E8;
+        }
+        body.dark-mode .cta-btn-primary {
+            background: #1A6BA0;
+            color: white;
+        }
+        body.dark-mode .cta-btn-primary:hover {
+            background: #2A8AC0;
+        }
+        body.dark-mode .cta-btn-outline {
+            border-color: #4FD1C5;
+            color: #4FD1C5;
+        }
+        body.dark-mode .cta-btn-outline:hover {
+            background: rgba(79, 209, 197, 0.1);
+        }
+        body.dark-mode .feature-item {
+            color: #CBD5E1;
+        }
+        body.dark-mode .cta-divider {
+            background: rgba(125, 211, 232, 0.3);
+        }
+        
         body.dark-mode footer {
             background: #0A1525;
             border-top-color: #1A3A50;
@@ -567,7 +604,7 @@
             margin: 0 auto;
         }
 
-        /* Contact Grid - Two columns side by side with equal height */
+        /* Contact Grid */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -576,13 +613,12 @@
             align-items: stretch;
         }
 
-        /* Contact Form Card - RECTANGLE (sharp corners) */
         .contact-card {
             background: #FFFFFF;
             border: 1px solid #D0E4F7;
             padding: 2rem;
             transition: all 0.25s ease;
-            border-radius: 0px;
+            border-radius: 18px;
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -604,8 +640,6 @@
         .contact-card h2 i {
             color: #2563eb;
         }
-
-        /* Form takes remaining space */
         .contact-card form {
             flex: 1;
             display: flex;
@@ -625,7 +659,7 @@
             transition: all 0.2s;
             background: #FFFFFF;
             color: #111111;
-            border-radius: 0px;
+            border-radius: 18px;
         }
         .form-group input:focus,
         .form-group textarea:focus {
@@ -638,7 +672,6 @@
             resize: vertical;
         }
         
-        /* RECTANGLE BUTTON - sharp corners */
         .btn-submit {
             background: #2563eb;
             color: white;
@@ -653,7 +686,7 @@
             gap: 0.6rem;
             width: 100%;
             justify-content: center;
-            border-radius: 0px;
+            border-radius: 8px;
             margin-top: auto;
         }
         .btn-submit:hover {
@@ -662,13 +695,12 @@
             box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
         }
 
-        /* Info Card - RECTANGLE (sharp corners) same level */
         .info-card {
             background: #FFFFFF;
             border: 1px solid #D0E4F7;
             padding: 2rem;
             transition: all 0.25s ease;
-            border-radius: 0px;
+            border-radius: 18px;
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -715,7 +747,6 @@
             word-break: break-word;
         }
         
-        /* RECTANGLE WHATSAPP BUTTON */
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
@@ -730,7 +761,7 @@
             transition: all 0.2s;
             width: 100%;
             margin-top: 0.5rem;
-            border-radius: 0px;
+            border-radius: 8px;
         }
         .whatsapp-btn:hover {
             background: #128C7E;
@@ -738,8 +769,7 @@
             box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
         }
 
-        
-        /* CTA SECTION */
+        /* CTA SECTION - LIGHT MODE */
         .cta-section {
             background: linear-gradient(135deg, #1d4ed8, #2563eb, #7c3aed);
             padding: 5rem 2rem;
@@ -794,9 +824,12 @@
         .cta-btn-primary {
             background: white;
             color: #2563eb;
-            padding: 1rem 2.2rem;
-            border-radius: 14px;
+            padding: 1rem 2.5rem;
+            border-radius: 999px;
             font-weight: 700;
+            min-width: 260px;
+            justify-content: center;
+            text-align: center;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -809,13 +842,20 @@
         }
         .cta-btn-outline {
             background: transparent;
+            min-width: 260px;
             color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 14px;
+            padding: 1rem 2.5rem;
+            border-radius: 999px;
+            justify-content: center;
+            text-align: center;
             font-weight: 700;
             border: 2px solid rgba(255,255,255,0.5);
             text-decoration: none;
             transition: 0.3s ease;
+        }
+        .cta-buttons a {
+            flex: 1;
+            max-width: 350px;
         }
         .cta-btn-outline:hover {
             background: rgba(255,255,255,0.1);
@@ -916,6 +956,13 @@
             .contact-card h2, .info-card h2 {
                 font-size: 1.3rem;
             }
+            .cta-btn-primary, .cta-btn-outline {
+                min-width: 220px;
+                padding: 0.9rem 1.8rem;
+            }
+            .cta-section h2 {
+                font-size: 2rem;
+            }
         }
         @media (max-width: 480px) {
             .container {
@@ -926,6 +973,13 @@
             }
             .btn-submit, .whatsapp-btn {
                 padding: 0.8rem 1.2rem;
+            }
+            .cta-btn-primary, .cta-btn-outline {
+                min-width: 100%;
+                padding: 0.9rem 1.5rem;
+            }
+            .cta-section h2 {
+                font-size: 1.6rem;
             }
         }
     </style>

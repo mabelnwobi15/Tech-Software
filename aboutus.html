@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <meta name="color-scheme" content="light">
 </head>
 <body>
 
@@ -157,6 +157,16 @@
             scroll-behavior: smooth;
             transition: background-color 0.25s ease, color 0.25s ease;
         }
+
+                    /* Prevent automatic browser dark mode */
+            :root {
+                color-scheme: light;
+            }
+
+            /* Enable browser dark mode only when selected */
+            body.dark-mode {
+                color-scheme: dark;
+            }
 
         /* DARK MODE */
         body.dark-mode {
@@ -478,7 +488,7 @@
             border: 1px solid #D0E4F7;
             padding: 2rem;
             transition: all 0.25s ease;
-            border-radius: 0px;
+            border-radius: 18px;
         }
         .card:hover {
             transform: translateY(-4px);
@@ -511,7 +521,7 @@
             margin: 2rem 0 2.5rem;
             text-align: center;
             border: 1px solid #E2E8F0;
-            border-radius: 0px;
+            border-radius: 18px;
         }
         .stats-about-grid {
             display: flex;
@@ -646,15 +656,22 @@
             gap: 1.2rem;
             flex-wrap: wrap;
         }
+
+        .cta-buttons a {
+    flex: 1;
+}
         .cta-btn-primary {
             background: white;
+            min-width: 320px;
             color: #2563eb;
-            padding: 1rem 2.2rem;
-            border-radius: 14px;
+            padding: 1rem 2.5rem;
+            border-radius: 40px;
             font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            text-align: center;
+            justify-content: center;
             gap: 0.5rem;
             transition: 0.3s ease;
         }
@@ -665,9 +682,10 @@
         .cta-btn-outline {
             background: transparent;
             color: white;
-            padding: 1rem 2.2rem;
-            border-radius: 14px;
+            padding: 1rem 3rem;
+            border-radius: 40px;
             font-weight: 700;
+            min-width: 300px;
             border: 2px solid rgba(255,255,255,0.5);
             text-decoration: none;
             transition: 0.3s ease;
@@ -842,75 +860,125 @@
         });
 
         // ========== DARK MODE TOGGLE ==========
-        const toggleDark = document.getElementById('darkModeToggle');
-        const body = document.body;
-        
-        function setTheme(theme) {
-            if (theme === 'light') {
-                body.classList.remove('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('techThemeAbout', 'light');
-            } else {
-                body.classList.add('dark-mode');
-                if (toggleDark) toggleDark.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('techThemeAbout', 'dark');
-            }
+        // Dark mode toggle
+const toggleDark = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// Apply selected theme
+function setTheme(theme) {
+
+    if (theme === 'dark') {
+
+        body.classList.add('dark-mode');
+
+        // Update browser colour scheme
+        document.documentElement.style.colorScheme = 'dark';
+
+        // Change icon
+        if (toggleDark) {
+            toggleDark.innerHTML =
+                '<i class="fas fa-sun"></i>';
         }
-        
-        const savedTheme = localStorage.getItem('techThemeAbout');
-        if (savedTheme === 'dark') {
-            setTheme('dark');
-        } else if (savedTheme === 'light') {
+
+        // Save theme
+        localStorage.setItem(
+            'techThemeFinal',
+            'dark'
+        );
+
+    } else {
+
+        body.classList.remove('dark-mode');
+
+        // Force light mode
+        document.documentElement.style.colorScheme = 'light';
+
+        // Change icon
+        if (toggleDark) {
+            toggleDark.innerHTML =
+                '<i class="fas fa-moon"></i>';
+        }
+
+        // Save theme
+        localStorage.setItem(
+            'techThemeFinal',
+            'light'
+        );
+    }
+}
+
+// Load saved theme
+const savedTheme =
+    localStorage.getItem('techThemeFinal') || 'light';
+
+setTheme(savedTheme);
+
+// Toggle theme when button is clicked
+if (toggleDark) {
+
+    toggleDark.addEventListener('click', () => {
+
+        if (body.classList.contains('dark-mode')) {
             setTheme('light');
         } else {
-            setTheme('light');
+            setTheme('dark');
         }
-        
-        if (toggleDark) {
-            toggleDark.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    setTheme('light');
-                } else {
-                    setTheme('dark');
-                }
-            });
-        }
+
+    });
+}
 
         // ========== COUNTER ANIMATION - FIXED: all counters run when visible ==========
-        const counters = document.querySelectorAll('.counter');
-        
-        const startCounter = (counter) => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            let current = 0;
-            const increment = Math.ceil(target / 60);
-            
-            const updateCounter = () => {
-                current += increment;
-                if (current >= target) {
-                    counter.innerText = target;
-                    return;
-                }
-                counter.innerText = current;
-                setTimeout(updateCounter, 25);
-            };
-            updateCounter();
-        };
-        
-        const startCounters = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    startCounter(counter);
-                    observer.unobserve(counter);
-                }
-            });
-        };
-        
-        const observer = new IntersectionObserver(startCounters, { threshold: 0.3 });
-        counters.forEach(counter => {
-            observer.observe(counter);
-        });
+      const counters = document.querySelectorAll('.counter');
 
+const animateCounter = (counter) => {
+
+    const target = Number(counter.dataset.target);
+
+    let current = 0;
+
+    const duration = 1500;
+
+    const step = Math.max(
+        1,
+        Math.ceil(target / (duration / 16))
+    );
+
+    const update = () => {
+
+        current += step;
+
+        if (current >= target) {
+            counter.textContent = target;
+            return;
+        }
+
+        counter.textContent = current;
+
+        requestAnimationFrame(update);
+    };
+
+    update();
+};
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            animateCounter(entry.target);
+
+            observer.unobserve(entry.target);
+        }
+    });
+
+}, {
+    threshold: 0.3
+});
+
+counters.forEach(counter => {
+    observer.observe(counter);
+});
         // ========== CTA BUTTON ==========
         const consultBtn = document.getElementById('consultBtn');
         if (consultBtn) {

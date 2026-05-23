@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
+    <meta name="color-scheme" content="light">
 </head>
 <body>
 
@@ -744,14 +744,22 @@
             gap: 1.2rem;
             flex-wrap: wrap;
         }
+
+        .cta-buttons a {
+    flex: 1;
+}
         .cta-btn-primary {
             background: white;
             color: #2563eb;
-            padding: 1rem 2.2rem;
+            padding: 1rem 3rem;
+            min-width: 320px;
             border-radius: 14px;
             font-weight: 700;
+             border-radius: 999px; /* Pill shape */
             text-decoration: none;
+            justify-content: center;
             display: inline-flex;
+             text-align: center;
             align-items: center;
             gap: 0.5rem;
             transition: 0.3s ease;
@@ -766,6 +774,7 @@
             padding: 1rem 2.2rem;
             border-radius: 14px;
             font-weight: 700;
+             border-radius: 999px; /* Pill shape */
             border: 2px solid rgba(255,255,255,0.5);
             text-decoration: none;
             transition: 0.3s ease;
